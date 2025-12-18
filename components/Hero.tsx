@@ -1,9 +1,19 @@
 'use client';
 
 import { useLanguage } from '@/contexts/LanguageContext';
+import Lottie from 'lottie-react';
+import { useEffect, useState } from 'react';
 
 const Hero = () => {
   const { t, language } = useLanguage();
+  const [animationData, setAnimationData] = useState(null);
+
+  useEffect(() => {
+    fetch('/hero-animation.json')
+      .then((res) => res.json())
+      .then((data) => setAnimationData(data))
+      .catch((err) => console.error('Error loading animation:', err));
+  }, []);
 
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     e.preventDefault();
@@ -15,13 +25,16 @@ const Hero = () => {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center bg-black text-white pt-24 overflow-hidden">
-      {/* Animated Background */}
+      {/* Animated Background - Lottie */}
       <div className="absolute inset-0 z-0">
-        <img
-          src="/hero_bganiamtion.gif"
-          alt="Background animation"
-          className="w-full h-full object-cover opacity-50"
-        />
+        {animationData && (
+          <Lottie
+            animationData={animationData}
+            loop={true}
+            className="w-full h-full"
+            style={{ width: '100%', height: '100%', opacity: 0.5 }}
+          />
+        )}
         <div className="absolute inset-0 bg-black/40" />
       </div>
 

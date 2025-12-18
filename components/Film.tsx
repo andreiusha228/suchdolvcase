@@ -19,22 +19,13 @@ const Film = () => {
           </div>
 
           <div className="relative w-full aspect-video bg-black border border-white/10">
-            <div className="absolute inset-0 flex items-center justify-center">
-              <div className="text-center space-y-3">
-                <p className="text-white/30 text-xs font-light">{t('film.placeholder')}</p>
-                <p className="text-white/20 text-xs font-light">{t('film.placeholder2')}</p>
-              </div>
-            </div>
-            {/* YouTube embed placeholder - uncomment and add video ID when ready */}
-            {/* 
             <iframe
               className="w-full h-full"
-              src="https://www.youtube.com/embed/YOUR_VIDEO_ID"
+              src="https://www.youtube.com/embed/50XAirjU74E"
               title="Suchdol v čase"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             ></iframe>
-            */}
           </div>
 
           <p className="text-center text-xs text-white/40 font-light tracking-wide">

@@ -58,7 +58,7 @@ const Navbar = () => {
             }}
             className="text-white text-sm font-light tracking-[0.15em] hover:opacity-60 transition-opacity duration-400"
           >
-            SUCHDOL
+            SUCHDOL V ČASE
           </a>
           
           {/* Desktop Menu */}

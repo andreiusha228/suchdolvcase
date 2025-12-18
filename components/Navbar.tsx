@@ -58,7 +58,7 @@ const Navbar = () => {
             }}
             className="text-white text-sm font-light tracking-[0.15em] hover:opacity-60 transition-opacity duration-400"
           >
-            SUCHDOL V ČASE
+            SUCHDOL
           </a>
           
           {/* Desktop Menu */}
@@ -134,44 +134,36 @@ const Navbar = () => {
             onClick={() => setMobileMenuOpen(false)}
           />
           
-          {/* Menu Panel */}
+          {/* Menu Panel - Left Side */}
           <div
-            className={`absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-black border-l border-white/10 transition-transform duration-500 ease-out ${
-              mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            className={`absolute left-0 top-0 h-full w-64 max-w-[75vw] bg-black border-r border-white/10 transition-transform duration-500 ease-out ${
+              mobileMenuOpen ? 'translate-x-0' : '-translate-x-full'
             }`}
           >
-            <div className="flex flex-col h-full pt-20 px-8 pb-8">
+            <div className="flex flex-col h-full pt-24 px-6 pb-8">
               <div className="flex flex-col space-y-1">
                 <a
                   href="#o-projektu"
                   onClick={(e) => handleClick(e, '#o-projektu')}
-                  className="text-white/80 text-lg font-light tracking-wide hover:text-white hover:bg-white/5 transition-all duration-300 rounded-lg px-4 py-3 -mx-4"
+                  className="text-white/60 text-base font-light tracking-wide hover:text-white transition-all duration-300 py-2"
                 >
                   {t('nav.about')}
                 </a>
                 <a
                   href="#film"
                   onClick={(e) => handleClick(e, '#film')}
-                  className="text-white/80 text-lg font-light tracking-wide hover:text-white hover:bg-white/5 transition-all duration-300 rounded-lg px-4 py-3 -mx-4"
+                  className="text-white/60 text-base font-light tracking-wide hover:text-white transition-all duration-300 py-2"
                 >
                   {t('nav.film')}
                 </a>
                 <a
                   href="#kontakt"
                   onClick={(e) => handleClick(e, '#kontakt')}
-                  className="text-white/80 text-lg font-light tracking-wide hover:text-white hover:bg-white/5 transition-all duration-300 rounded-lg px-4 py-3 -mx-4"
+                  className="text-white/60 text-base font-light tracking-wide hover:text-white transition-all duration-300 py-2"
                 >
                   {t('nav.contact')}
                 </a>
                 <div className="pt-4 mt-4 border-t border-white/10">
-                  <button
-                    onClick={() => {
-                      toggleLanguage();
-                    }}
-                    className="text-white/80 text-lg font-light tracking-wide hover:text-white hover:bg-white/5 transition-all duration-300 rounded-lg px-4 py-3 -mx-4 w-full text-left uppercase"
-                  >
-                    {language === 'cz' ? 'EN' : 'CZ'}
-                  </button>
                 </div>
               </div>
             </div>

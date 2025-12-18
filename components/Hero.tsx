@@ -24,16 +24,18 @@ const Hero = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center bg-black text-white pt-24 overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center bg-black text-white pt-16 overflow-hidden">
       {/* Animated Background - Lottie */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute inset-0 z-0 overflow-hidden">
         {animationData && (
-          <Lottie
-            animationData={animationData}
-            loop={true}
-            className="w-full h-full"
-            style={{ width: '100%', height: '100%', opacity: 0.8 }}
-          />
+          <div className="w-full h-full scale-150 md:scale-125 lg:scale-110">
+            <Lottie
+              animationData={animationData}
+              loop={true}
+              className="w-full h-full"
+              style={{ width: '100%', height: '100%', opacity: 0.8 }}
+            />
+          </div>
         )}
         <div className="absolute inset-0 bg-black/30" />
       </div>

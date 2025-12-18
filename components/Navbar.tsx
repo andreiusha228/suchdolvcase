@@ -164,6 +164,14 @@ const Navbar = () => {
                   {t('nav.contact')}
                 </a>
                 <div className="pt-4 mt-4 border-t border-white/10">
+                  <button
+                    onClick={() => {
+                      toggleLanguage();
+                    }}
+                    className="text-white/60 text-base font-light tracking-wide hover:text-white transition-all duration-300 py-2 uppercase"
+                  >
+                    {language === 'cz' ? 'EN' : 'CZ'}
+                  </button>
                 </div>
               </div>
             </div>

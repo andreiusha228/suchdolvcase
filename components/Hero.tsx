@@ -60,17 +60,23 @@ const Hero = () => {
 
           {/* Right: Video Mockup */}
           <div className="lg:w-1/2 w-full max-w-2xl">
-            <div className="relative aspect-video border border-white/10 bg-black flex items-center justify-center group cursor-pointer hover:border-white/20 transition-all duration-600">
-              <div className="absolute inset-0 flex items-center justify-center">
-                <svg
-                  className="w-20 h-20 text-white/30 group-hover:text-white/50 group-hover:scale-105 transition-all duration-600"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M8 5v14l11-7z" />
-                </svg>
+            <a
+              href="#film"
+              onClick={(e) => handleClick(e, '#film')}
+              className="block"
+            >
+              <div className="relative aspect-video border border-white/10 bg-black flex items-center justify-center group cursor-pointer hover:border-white/20 transition-all duration-600">
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <svg
+                    className="w-20 h-20 text-white/30 group-hover:text-white/50 group-hover:scale-105 transition-all duration-600"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
               </div>
-            </div>
+            </a>
           </div>
         </div>
       </div>

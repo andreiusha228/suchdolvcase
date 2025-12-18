@@ -37,7 +37,7 @@ const translations = {
     // Film
     'film.title': 'Film Suchdol v čase',
     'film.description': 'Krátký dokument zachycoval vývoj Suchdola od historických fotografií až po současné záběry.',
-    'film.duration': 'Délka: XX minut · Rok dokončení: 2025',
+    'film.duration': 'Délka: 3 minuty · Rok dokončení: 2025',
     'film.placeholder': '// TODO: doplnit odkaz',
     'film.placeholder2': 'YouTube embed bude zde',
     
@@ -78,7 +78,7 @@ const translations = {
     // Film
     'film.title': 'Film Suchdol in Time',
     'film.description': 'The short documentary captured the development of Suchdol from historical photographs to contemporary footage.',
-    'film.duration': 'Duration: XX minutes · Year completed: 2025',
+    'film.duration': 'Duration: 3 minutes · Year completed: 2025',
     'film.placeholder': '// TODO: add link',
     'film.placeholder2': 'YouTube embed will be here',
     

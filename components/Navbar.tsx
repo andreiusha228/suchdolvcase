@@ -92,69 +92,88 @@ const Navbar = () => {
             </button>
           </div>
 
-          {/* Mobile Hamburger Button */}
+          {/* Mobile Hamburger/Close Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-white/60 hover:text-white transition-colors duration-400"
+            className="lg:hidden text-white/80 hover:text-white transition-colors duration-400 w-8 h-8 flex items-center justify-center"
             aria-label="Toggle menu"
           >
-            <div className="w-6 h-5 flex flex-col justify-between">
-              <span
-                className={`block h-px bg-current transition-all duration-400 ${
-                  mobileMenuOpen ? 'rotate-45 translate-y-2' : ''
-                }`}
-              />
-              <span
-                className={`block h-px bg-current transition-all duration-400 ${
-                  mobileMenuOpen ? 'opacity-0' : ''
-                }`}
-              />
-              <span
-                className={`block h-px bg-current transition-all duration-400 ${
-                  mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''
-                }`}
-              />
-            </div>
+            {mobileMenuOpen ? (
+              <svg
+                className="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            ) : (
+              <div className="w-6 h-5 flex flex-col justify-between">
+                <span className="block h-px bg-current" />
+                <span className="block h-px bg-current" />
+                <span className="block h-px bg-current" />
+              </div>
+            )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden fixed top-0 left-0 w-full h-screen bg-black transition-transform duration-500 ease-out ${
-            mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+          className={`lg:hidden fixed inset-0 z-50 transition-all duration-500 ease-out ${
+            mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
         >
-          <div className="container mx-auto px-6 pt-24">
-            <div className="flex flex-col space-y-8">
-              <a
-                href="#o-projektu"
-                onClick={(e) => handleClick(e, '#o-projektu')}
-                className="text-white/60 text-base font-light tracking-wide hover:text-white transition-colors duration-400"
-              >
-                {t('nav.about')}
-              </a>
-              <a
-                href="#film"
-                onClick={(e) => handleClick(e, '#film')}
-                className="text-white/60 text-base font-light tracking-wide hover:text-white transition-colors duration-400"
-              >
-                {t('nav.film')}
-              </a>
-              <a
-                href="#kontakt"
-                onClick={(e) => handleClick(e, '#kontakt')}
-                className="text-white/60 text-base font-light tracking-wide hover:text-white transition-colors duration-400"
-              >
-                {t('nav.contact')}
-              </a>
-              <button
-                onClick={() => {
-                  toggleLanguage();
-                }}
-                className="text-white/60 text-base font-light tracking-wide hover:text-white transition-colors duration-400 uppercase text-left"
-              >
-                {language === 'cz' ? 'EN' : 'CZ'}
-              </button>
+          {/* Backdrop */}
+          <div
+            className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          
+          {/* Menu Panel */}
+          <div
+            className={`absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-black/95 backdrop-blur-xl border-l border-white/10 transition-transform duration-500 ease-out ${
+              mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
+            }`}
+          >
+            <div className="flex flex-col h-full pt-20 px-8 pb-8">
+              <div className="flex flex-col space-y-1">
+                <a
+                  href="#o-projektu"
+                  onClick={(e) => handleClick(e, '#o-projektu')}
+                  className="text-white/80 text-lg font-light tracking-wide hover:text-white hover:bg-white/5 transition-all duration-300 rounded-lg px-4 py-3 -mx-4"
+                >
+                  {t('nav.about')}
+                </a>
+                <a
+                  href="#film"
+                  onClick={(e) => handleClick(e, '#film')}
+                  className="text-white/80 text-lg font-light tracking-wide hover:text-white hover:bg-white/5 transition-all duration-300 rounded-lg px-4 py-3 -mx-4"
+                >
+                  {t('nav.film')}
+                </a>
+                <a
+                  href="#kontakt"
+                  onClick={(e) => handleClick(e, '#kontakt')}
+                  className="text-white/80 text-lg font-light tracking-wide hover:text-white hover:bg-white/5 transition-all duration-300 rounded-lg px-4 py-3 -mx-4"
+                >
+                  {t('nav.contact')}
+                </a>
+                <div className="pt-4 mt-4 border-t border-white/10">
+                  <button
+                    onClick={() => {
+                      toggleLanguage();
+                    }}
+                    className="text-white/80 text-lg font-light tracking-wide hover:text-white hover:bg-white/5 transition-all duration-300 rounded-lg px-4 py-3 -mx-4 w-full text-left uppercase"
+                  >
+                    {language === 'cz' ? 'EN' : 'CZ'}
+                  </button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

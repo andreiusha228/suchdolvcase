@@ -58,7 +58,7 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Right: Video */}
+          {/* Right: Animated Video/GIF */}
           <div className="lg:w-1/2 w-full max-w-2xl">
             <a
               href="#film"
@@ -66,16 +66,34 @@ const Hero = () => {
               className="block"
             >
               <div className="relative aspect-video border border-white/10 bg-black overflow-hidden group cursor-pointer hover:border-white/20 transition-all duration-600">
+                {/* Try GIF first if exists, otherwise use video */}
+                <img
+                  src="/animated.gif"
+                  alt="Suchdol v čase"
+                  className="w-full h-full object-cover"
+                  onError={(e) => {
+                    // Hide GIF if it doesn't exist and show video
+                    const container = e.currentTarget.parentElement;
+                    const video = container?.querySelector('video');
+                    if (video) {
+                      e.currentTarget.style.display = 'none';
+                      video.style.display = 'block';
+                      video.play().catch(() => {});
+                    }
+                  }}
+                />
                 <video
                   autoPlay
                   loop
                   muted
                   playsInline
                   className="w-full h-full object-cover"
+                  style={{ display: 'none' }}
                 >
                   <source src="/animated.MOV" type="video/quicktime" />
+                  <source src="/animated.mp4" type="video/mp4" />
                 </video>
-                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-all duration-600">
+                <div className="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/10 transition-all duration-600 pointer-events-none">
                   <svg
                     className="w-20 h-20 text-white/50 group-hover:text-white/70 group-hover:scale-110 transition-all duration-600"
                     fill="currentColor"

@@ -95,15 +95,15 @@ const Navbar = () => {
           {/* Mobile Hamburger/Close Button */}
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="lg:hidden text-white/80 hover:text-white transition-colors duration-400 w-8 h-8 flex items-center justify-center"
+            className="lg:hidden text-white hover:text-white transition-colors duration-400 w-8 h-8 flex items-center justify-center relative z-50"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? (
               <svg
-                className="w-6 h-6"
+                className="w-7 h-7 text-white"
                 fill="none"
                 stroke="currentColor"
-                strokeWidth="1.5"
+                strokeWidth="2.5"
                 viewBox="0 0 24 24"
               >
                 <path
@@ -114,9 +114,9 @@ const Navbar = () => {
               </svg>
             ) : (
               <div className="w-6 h-5 flex flex-col justify-between">
-                <span className="block h-px bg-current" />
-                <span className="block h-px bg-current" />
-                <span className="block h-px bg-current" />
+                <span className="block h-px bg-white" />
+                <span className="block h-px bg-white" />
+                <span className="block h-px bg-white" />
               </div>
             )}
           </button>
@@ -124,19 +124,19 @@ const Navbar = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden fixed inset-0 z-50 transition-all duration-500 ease-out ${
+          className={`lg:hidden fixed inset-0 z-40 transition-all duration-500 ease-out ${
             mobileMenuOpen ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
         >
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/80 backdrop-blur-md"
+            className="absolute inset-0 bg-black/60"
             onClick={() => setMobileMenuOpen(false)}
           />
           
           {/* Menu Panel */}
           <div
-            className={`absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-black/95 backdrop-blur-xl border-l border-white/10 transition-transform duration-500 ease-out ${
+            className={`absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-black border-l border-white/10 transition-transform duration-500 ease-out ${
               mobileMenuOpen ? 'translate-x-0' : 'translate-x-full'
             }`}
           >

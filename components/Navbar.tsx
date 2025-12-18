@@ -24,7 +24,7 @@ const Navbar = () => {
   };
 
   const toggleLanguage = () => {
-    setLanguage(language === 'cs' ? 'en' : 'cs');
+    setLanguage(language === 'cz' ? 'en' : 'cz');
   };
 
   return (
@@ -71,7 +71,7 @@ const Navbar = () => {
               onClick={toggleLanguage}
               className="text-white/60 text-xs font-light tracking-wide hover:text-white transition-colors duration-400 uppercase"
             >
-              {language === 'cs' ? 'EN' : 'CS'}
+              {language === 'cz' ? 'EN' : 'CZ'}
             </button>
           </div>
         </div>

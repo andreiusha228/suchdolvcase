@@ -2,7 +2,7 @@
 
 import { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
-type Language = 'cs' | 'en';
+type Language = 'cz' | 'en';
 
 interface LanguageContextType {
   language: Language;
@@ -13,7 +13,7 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 const translations = {
-  cs: {
+  cz: {
     // Navbar
     'nav.about': 'O projektu',
     'nav.film': 'Film',
@@ -98,12 +98,12 @@ const translations = {
 };
 
 export function LanguageProvider({ children }: { children: ReactNode }) {
-  const [language, setLanguageState] = useState<Language>('cs');
+  const [language, setLanguageState] = useState<Language>('cz');
 
   useEffect(() => {
     // Load language from localStorage or default to Czech
     const savedLang = localStorage.getItem('language') as Language;
-    if (savedLang && (savedLang === 'cs' || savedLang === 'en')) {
+    if (savedLang && (savedLang === 'cz' || savedLang === 'en')) {
       setLanguageState(savedLang);
     }
   }, []);
@@ -114,7 +114,7 @@ export function LanguageProvider({ children }: { children: ReactNode }) {
   };
 
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations.cs] || key;
+    return translations[language][key as keyof typeof translations.cz] || key;
   };
 
   return (

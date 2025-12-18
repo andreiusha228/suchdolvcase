@@ -24,7 +24,7 @@ const Hero = () => {
                 {t('hero.label')}
               </span>
               <h1 className="text-6xl lg:text-8xl font-extralight tracking-tight leading-[0.95]">
-                {language === 'cs' ? (
+                {language === 'cz' ? (
                   <>
                     Suchdol<br />v čase
                   </>

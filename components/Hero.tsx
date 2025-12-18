@@ -32,15 +32,15 @@ const Hero = () => {
             animationData={animationData}
             loop={true}
             className="w-full h-full"
-            style={{ width: '100%', height: '100%', opacity: 0.5 }}
+            style={{ width: '100%', height: '100%', opacity: 0.8 }}
           />
         )}
-        <div className="absolute inset-0 bg-black/40" />
+        <div className="absolute inset-0 bg-black/30" />
       </div>
 
-      {/* Content - Centered */}
+      {/* Content - Centered, Minimalist */}
       <div className="relative z-10 container mx-auto px-6 lg:px-12">
-        <div className="flex flex-col items-center text-center max-w-4xl mx-auto space-y-12">
+        <div className="flex flex-col items-center text-center max-w-3xl mx-auto space-y-10">
           <div className="space-y-6">
             <span className="text-white/60 text-xs uppercase tracking-[0.25em] font-light block">
               {t('hero.label')}
@@ -57,12 +57,7 @@ const Hero = () => {
               )}
             </h1>
           </div>
-          <div className="space-y-4 text-lg lg:text-xl text-white/80 leading-relaxed font-light">
-            <p>{t('hero.text1')}</p>
-            <p>{t('hero.text2')}</p>
-            <p>{t('hero.text3')}</p>
-          </div>
-          <div className="flex flex-col sm:flex-row gap-6 pt-2">
+          <div className="flex flex-col sm:flex-row gap-6">
             <a
               href="#film"
               onClick={(e) => handleClick(e, '#film')}

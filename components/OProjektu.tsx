@@ -14,6 +14,15 @@ const OProjektu = () => {
           </h2>
           <div className="space-y-8 text-lg lg:text-xl text-white/70 leading-relaxed font-light">
             <p>
+              {t('hero.text1')}
+            </p>
+            <p>
+              {t('hero.text2')}
+            </p>
+            <p>
+              {t('hero.text3')}
+            </p>
+            <p>
               {t('about.p1')}
             </p>
             <p>

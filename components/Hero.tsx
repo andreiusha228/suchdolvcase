@@ -28,7 +28,7 @@ const Hero = () => {
       {/* Animated Background - Lottie */}
       <div className="absolute inset-0 z-0 overflow-hidden">
         {animationData && (
-          <div className="w-full h-full scale-[6] md:scale-[5] lg:scale-[4.4]">
+          <div className="w-full h-full scale-[2]">
             <Lottie
               animationData={animationData}
               loop={true}
